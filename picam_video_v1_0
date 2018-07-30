@@ -1,7 +1,9 @@
+# This is a script to record a 10 second video using a Raspberry Pi and Pi Camera (Python 2)
+
 from picamera import PiCamera, Color
 from time import sleep
 
-camera = PiCamera()
+camera = PiCamera() # This creates an instance of the PiCamera class, meaning camera inherits the attributes and methods of that class.
 
 camera.brightness = 70   # set camera brightness between 0 and 100
 camera.contrast = 50   # set camera contrast between 0 and 100
