@@ -1,0 +1,22 @@
+from picamera import PiCamera, Color
+from time import sleep
+
+camera = PiCamera()
+
+camera.brightness = 70   # set camera brightness between 0 and 100
+camera.contrast = 50   # set camera contrast between 0 and 100
+
+# camera.annotate_text = "Video to test fall experiment!"   # text appearing at top of video screen
+# camera.annotate_text_size = 32   # set annotation text size between 6 and 160
+# camera.annotate_background = Color('blue')   # set annotation text background colour
+# camera.annotate_foreground = Color('yellow')   # set annotation text colour
+
+camera.rotation = 180   # rotates camera view by 180 degrees
+camera.resolution = (640, 480)   # set camera resolution
+camera.framerate = 24   # set camera number of frames per second
+
+camera.start_preview()   # starts camera preview set transparency between brackets e.g: alpha=200
+camera.start_recording('/home/pi/picamera/gacc_d180726_h1635/run005.h264')   # starts recording into file
+sleep(10)   # command to wait for 10 s i.e. video recording for 10 s
+camera.stop_recording()   # stop camera recording
+camera.stop_preview()   # stop camera preview
